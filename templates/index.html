@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Would You Have Survived Titanic?</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'fonts/material-icon/css/material-design-iconic-font.min.css')}}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css')}}">
+</head>
+<body>
+
+    <div class="main">
+        <div class="container">
+
+            <div class="signup-content">
+
+                <div class="signup-img">
+
+                    <img src="{{url_for('static',filename = 'images/signup-img.jpg')}}" alt="">
+                </div>
+                <div class="signup-form">
+                    <h1 style="text-align: center;">Predict Your Expense</h1>
+                    
+
+                    <form method="POST" class="register-form" id="register-form" action = '/first'>
+                        
+                        <h2 style="margin-left: 200px;">Details Form</h2>
+                        <div class="form-row">
+                            <div class="form-group">
+                                
+                                <label for="name">Surfix</label>                               
+                                <div class="form-select">
+                                    <select name="surfix" id="surfix">
+                                        <option name = "surfix" value="mr">Mr.</option>
+                                        <option name = "surfix" value="master">Master</option>
+                                        <option name = "surfix" value="miss">Miss</option>
+                                        <option name = "surfix" value="mrs">Mrs.</option>
+                                    </select>
+                                    <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                                </div>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Name :</label>
+                                <input type="text" name="name" id="name">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="last_name">Last Name :</label>
+                                <input type="text" name="last_name" id="last_name"/>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Gender :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="male" checked>
+                                <label value="1" for="male">Male</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="female">
+                                <label value="0" for="female">Female</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="other">
+                                <label for="other">Other</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="age">Age :</label>
+                                <input type="number" name="age" id="age" >
+                            </div>
+                            <div class="form-group">
+                                <label for="hours">Working Hours :</label>
+                                <input type="number" name="hours" id="hours" >
+                            </div>
+                             <div class="form-group">
+                                <label for="workclass">Workclass :</label>
+                                <select name="workclass" id="workclass">
+                                        <option value="NaN">Choose Below</option>
+                                        <option value="0">Federal Government</option>
+                                        <option value="1">Local Government</option>
+                                        <option value="2">Private</option>
+                                        <option value="3">Self Employed</option>
+                                        <option value="4">Self Employed No Income</option>
+                                        <option value="5">State Government</option>
+                                        <option value="6">Unemployed</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="education">Education</label>
+                                <select name="education" id="education">
+                                        <option value="NaN">Choose Below</option>
+                                        <option value="1">School (Till 10th)</option>
+                                        <option value="11">High-School</option>
+                                        <option value="10">College not complete</option>
+                                        <option value="9">Graduate</option>
+                                        <option value="12">Masters</option>
+                                        <option value="13">Doctorate</option>
+                                </select>
+                                
+                            </div>
+                            <div class="form-group">
+                                <label for="status">Marital Status</label>
+                                <select name="status" id="status">
+                                        <option value="NaN">Choose Below</option>
+                                        <option value="4">Never Married / Single</option>
+                                        <option value="2">Married</option>
+                                        <option value="0">Divorced</option>
+                                        <option value="1">Divorced With Childrens</option>
+
+                                </select>                           
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="relationship">Relationship</label>
+                                <select name="relationship" id="relationship">
+                                        <option value="NaN">Choose Below</option>
+                                        <option value="0">Husband</option>
+                                        <option value="5">Wife</option>
+                                        <option value="3">Student</option>
+                                        <option value="4">Unmarried</option>
+                                        <option value="1">Not In Family</option>
+                                        <option value="2">Other Relative</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group">
+                                <label for="race">Race</label>
+                                <select name="race" id="race">
+                                        <option value="NaN">Choose Below</option>
+                                        <option value="4">White</option>
+                                        <option value="2">Black</option>
+                                        <option value="0">Asian - </option>
+                                        <option value="1">American - </option>
+                                        <option value="1">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-submit">
+                            <input type="submit" value="Reset All" class="submit" name="reset" id="reset" />
+                            <input type="submit" value="Submit Form" class="submit" name="submit" id="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
